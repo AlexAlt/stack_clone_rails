@@ -9,10 +9,15 @@
 <body>
   <%= flash[:notice] %>
   <%= flash[:alert] %>
+  
+  <div class='navbar navbar-default'>
+    <%= yield(:navbar) %>
+    <a class="navbar-brand" href="/">Home</a>
+  </div>
 
-<div class="container">
-  <%= yield %>
-</div>
+  <div class="container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

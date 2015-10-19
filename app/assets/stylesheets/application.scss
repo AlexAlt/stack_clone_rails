@@ -1,2 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.intro-blurbs {
+  background-color: #ccc;
+  height: 200px;
+}
+.intro-para {
+  float: left;
+  width: 300px;
+}

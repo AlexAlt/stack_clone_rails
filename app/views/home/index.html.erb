@@ -1,0 +1,19 @@
+<% content_for(:navbar) do %>
+  <div class="nav navbar-nav navbar-right container-fluid">
+    <ul class="list-inline">
+      <% if current_user %>
+       <li><%= link_to "Log Out #{current_user.email}", log_out_path %></li>
+       <% else %>
+        <li><%= link_to 'Log In', log_in_path %></li>
+        <li><%= link_to 'Sign Up', new_user_path %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<h1>WELCOME</h1>
+
+<div class="intro-blurbs">
+  <p class="intro-para">Stack Overflow is a question and answer site for professional and enthusiast programmers. It's 100% free. </p>
+  <button class="btn btn-primary sign-up-btn"><%= link_to 'Sign Up', new_user_path %></button>
+</div>
