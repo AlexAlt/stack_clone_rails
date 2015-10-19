@@ -21,7 +21,7 @@
 
 <% if @questions.any? %>
   <% @questions.each do |question|  %>
-    <%= question.title %>
+    <%= link_to "#{question.title}", user_question_path(question.user, question) %>
     <%end %>
 <% else %>
   <p>No questions today.</p>

@@ -2,6 +2,10 @@ class QuestionsController < ApplicationController
   def index
   end
 
+  def show
+    @question = Question.find(params[:id])
+  end
+
   def new
     @question = Question.new
   end
@@ -13,6 +17,20 @@ class QuestionsController < ApplicationController
       redirect_to "/"
     else
       render :new
+    end
+  end
+
+  def edit
+    @question = Question.find(params[:id])
+  end
+
+  def update
+    question = Question.find(params[:id])
+    if question.update(question_params)
+      flash[:notice] = "Edit successful!"
+      redirect_to user_question_path(question, current_user)
+    else
+      render :edit
     end
   end
 
