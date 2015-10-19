@@ -16,6 +16,7 @@ gem 'bcrypt'
 group :development, :test do
   gem 'byebug'
   gem "rspec-rails"
+  gem "capybara-rails"
   gem 'launchy'
   gem 'pry'
   gem 'factory_girl_rails'
