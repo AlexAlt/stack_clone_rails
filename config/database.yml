@@ -1,0 +1,19 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  
+development:
+  <<: *default
+  database: stack_clone_development
+
+test:
+  <<: *default
+  database: stack_clone_test
+
+production:
+  <<: *default
+  database: stack_clone_production
+  username: stack_clone
+  password: <%= ENV['STACK_CLONE_DATABASE_PASSWORD'] %>
