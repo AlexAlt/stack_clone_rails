@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   attr_accessor :password
   validates_confirmation_of :password
   validates_presence_of :email
+  has_many :questions
   before_save :encrypt_password
 
   def encrypt_password
