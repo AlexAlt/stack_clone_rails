@@ -4,4 +4,5 @@
 
 <% if @question.user == current_user %>
   <%= link_to 'Edit', edit_user_question_path(@question, current_user) %>
+  <%= link_to 'Delete', user_question_path(@question, current_user), :method => "delete" %>
 <% end %>
