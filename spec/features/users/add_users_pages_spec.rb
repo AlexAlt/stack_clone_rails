@@ -8,7 +8,7 @@ describe 'the process to add a user' do
     fill_in 'Password', :with => 'alyssa'
     fill_in 'Confirm Password', :with => 'alyssa'
     click_on 'Submit'
-    expect(page).to have_content 'Alyssa Horrocks'
+    expect(page).to have_content 'Nailed it!!'
   end
 
   it 'give a user if info is entered improperly' do
