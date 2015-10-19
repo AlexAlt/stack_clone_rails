@@ -12,17 +12,31 @@
   </div>
 <% end %>
 
-<h1>WELCOME</h1>
+
+<div class="logo-home">
+</div>
 
 <div class="intro-blurbs">
   <p class="intro-para">Stack Overflow is a question and answer site for professional and enthusiast programmers. It's 100% free. </p>
-  <button class="btn btn-primary sign-up-btn"><%= link_to 'Sign Up', new_user_path %></button>
 </div>
 
-<% if @questions.any? %>
-  <% @questions.each do |question|  %>
-    <%= link_to "#{question.title}", user_question_path(question.user, question) %>
-    <%end %>
-<% else %>
-  <p>No questions today.</p>
-<% end %>
+<h3>Top Questions</h3>
+
+<table class="table table-hover">
+  <tbody>
+    <% if @questions.any? %>
+      <% @questions.each do |question|  %>
+        <tr>
+          <th scope="row"></th>
+          <td><%= link_to "#{question.title}", user_question_path(question.user, question) %></td>
+          <td>   </td>
+          <td>   </td>
+          <td>   </td>
+          <td><%= question.user.email %></td>
+        </tr>
+      <%end %>
+  </tbody>
+    <% else %>
+      <p>No questions today.</p>
+    <% end %>
+</table>

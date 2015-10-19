@@ -14,6 +14,6 @@ describe 'the process to delete a question' do
     click_on "Submit"
     click_on 'What is love?'
     click_on 'Delete'
-    expect(page).to have_content "WELCOME"
+    expect(page).to have_content "Log Out alyssa@alyssa.com"
   end
 end

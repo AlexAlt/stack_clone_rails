@@ -3,9 +3,23 @@
 
 .intro-blurbs {
   background-color: #ccc;
-  height: 200px;
+  height: 80px;
 }
 .intro-para {
   float: left;
   width: 300px;
+}
+
+.logo-home {
+  width: 200px;
+  height: 50px;
+  background-image: url("http://cdn.sstatic.net/stackoverflow/img/sprites.svg?v=a7723f5f7e59"), none;
+}
+
+.list-inline {
+  a {
+    color: white;
+  }
+  margin-top: 12px;
+  margin-bottom: 0px;
 }
