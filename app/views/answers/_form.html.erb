@@ -1,0 +1,13 @@
+<%= render "layouts/errors", :object => @answer %>
+
+<div class ="container">
+  <%= form_for [ @question, @answer], :html => {:class => "form-horizontal center"} do |f| %>
+
+    <div class="form-group">
+      <%= f.label :content, "Answer:", class: "control-label" %>
+        <%= f.text_area :content, class: "form-control" %>
+    </div>
+
+    <%= f.submit "Submit", class: "btn btn-default" %>
+  <% end %>
+</div>

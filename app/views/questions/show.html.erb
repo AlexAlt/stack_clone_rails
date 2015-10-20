@@ -2,6 +2,25 @@
 <h4>Asked by <%= @question.user.email %> on <%= @question.created_at.to_formatted_s(:short) %></h4>
 <p><%= @question.content %></p>
 
+<hr>
+
+<% if @question.answers.any?  %>
+  <ul class="list-unstyled">
+    <% @question.answers.each do |answer| %>
+      <li><%= answer.content %></li>
+      <small>Answered by:<%= answer.user.email %> at <%= answer.created_at.to_formatted_s(:short) %></small>
+    <% end %>
+  </ul>
+<%end %>
+
+
+
+
+
+<% if current_user &&  @question.user != current_user  %>
+  <%= link_to 'Answer', new_question_answer_path(@question) %>
+<% end  %>
+
 <% if @question.user == current_user %>
   <%= link_to 'Edit', edit_user_question_path(@question, current_user) %>
   <%= link_to 'Delete', user_question_path(@question, current_user), :method => "delete" %>

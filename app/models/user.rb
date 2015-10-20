@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   validates_presence_of :email
   has_many :questions
+  has_many :answers
   before_save :encrypt_password
 
   def encrypt_password
