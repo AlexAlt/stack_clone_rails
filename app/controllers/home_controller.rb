@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @questions = Question.all.order(created_at: :DESC)
+    @questions = Question.all.sort_by(&:up_votes).reverse
   end
 end

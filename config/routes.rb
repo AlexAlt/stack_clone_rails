@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   end
 
   resources :questions do
-    resources :answers, :only => [:new, :create, :edit, :destroy, :update]
+    resources :answers, :only => [:new, :create, :edit, :destroy, :update] do
+      member do
+        post :vote
+      end
+    end
   end
 
 

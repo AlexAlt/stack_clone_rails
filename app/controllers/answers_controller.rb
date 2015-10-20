@@ -42,6 +42,19 @@ class AnswersController < ApplicationController
     redirect_to user_question_path(@question.user, @question)
   end
 
+  def vote
+    answer = Answer.find(params[:id])
+    vote = Vote.create(voteable: answer, creator: current_user, vote: params[:vote])
+
+    if vote.valid?
+      flash[:notice] = "You're vote was counted"
+    else
+      flash[:notice] = "You can only vote once"
+    end
+
+    redirect_to :back
+  end
+
   private
   def answer_params
     params.require(:answer).permit(:content)
