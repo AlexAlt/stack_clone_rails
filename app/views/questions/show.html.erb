@@ -10,6 +10,8 @@
       <li>
         <% if current_user && answer.user == current_user %>
           <span><%= link_to '', edit_question_answer_path(@question, answer), class: 'glyphicon glyphicon-pencil' %></span>
+          <span><%= link_to '  ', question_answer_path(@question, answer), :data => {:confirm => "Are you sure?",
+  :method => "delete"}, class: 'glyphicon glyphicon-trash' %></span>
         <% end %><%= answer.content %>
       </li>
       <small>Answered by:<%= answer.user.email %> at <%= answer.created_at.to_formatted_s(:short) %></small>
