@@ -9,4 +9,8 @@ class Question < ActiveRecord::Base
   def up_votes
     self.votes.where(vote: true).size
   end
+
+  def answer_status
+    self.answers.size
+  end
 end

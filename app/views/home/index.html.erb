@@ -28,6 +28,9 @@
       <% @questions.each do |question|  %>
         <tr>
           <th scope="row"></th>
+          <td><%= question.up_votes %> Votes</td>
+          <td><%= question.answer_status %> Answers</td>
+          <td>   </td>
           <td><%= link_to "#{question.title}", user_question_path(question.user, question) %></td>
           <td>   </td>
           <td>   </td>
