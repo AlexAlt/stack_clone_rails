@@ -2,12 +2,14 @@
 @import "bootstrap";
 
 .intro-blurbs {
-  background-color: #ccc;
+  background-color: #eee;
   height: 80px;
+  border: solid 1px #ccc;
 }
 .intro-para {
   float: left;
   width: 300px;
+  padding: 7px;
 }
 
 .logo-home {
