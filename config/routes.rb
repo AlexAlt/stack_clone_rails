@@ -2,19 +2,19 @@ Rails.application.routes.draw do
   root :to => 'home#index'
 
   resources :users do
-    resources :questions
-  end
-
-  resources :users do
-    resources :answers
+    resources :questions do
+      member do
+        post :vote
+      end
+    end
   end
 
   resources :questions do
-    resources :answers
+    resources :answers, :only => [:new, :create, :edit, :destroy, :update]
   end
 
 
-  resources :sessions
+  resources :sessions, :only => [:new, :create, :destroy]
 
   get "/log-in" => "sessions#new"
   post "/log-in" => "sessions#create"

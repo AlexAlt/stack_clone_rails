@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   validates_presence_of :email
   has_many :questions
   has_many :answers
+  has_many :votes
   before_save :encrypt_password
 
   def encrypt_password

@@ -34,6 +34,19 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def vote
+    question = Question.find(params[:id])
+    vote = Vote.create(voteable: question, creator: current_user, vote: params[:vote])
+
+    if vote.valid?
+      flash[:notice] = "You're vote was counted"
+    else
+      flash[:notice] = "You can only vote once"
+    end
+
+    redirect_to :back
+  end
+
   def destroy
     @question = Question.find(params[:id])
     @question.destroy

@@ -1,4 +1,9 @@
-<h2><%= @question.title %></h2>
+
+
+<h2><%= @question.up_votes %><%= @question.title %></h2>
+<% if current_user &&  @question.user != current_user  %>
+  <span><%= link_to '', vote_user_question_path(current_user, @question, vote: true), method: 'post', class: "glyphicon glyphicon-arrow-up" %>Upvote</span>
+<% end  %>
 <h4>Asked by <%= @question.user.email %> on <%= @question.created_at.to_formatted_s(:short) %></h4>
 <p><%= @question.content %></p>
 
