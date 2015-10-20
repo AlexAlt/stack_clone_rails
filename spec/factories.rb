@@ -8,4 +8,8 @@ FactoryGirl.define do
     title('What is love?')
     content('Please explain in Spanish')
   end
+
+  factory(:answer) do
+    content('Something that hurts')
+  end
 end

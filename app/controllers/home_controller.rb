@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @questions = Question.all
+    @questions = Question.all.order(created_at: :DESC)
   end
 end
